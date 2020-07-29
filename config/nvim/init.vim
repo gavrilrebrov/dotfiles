@@ -34,9 +34,14 @@ Plug 'pangloss/vim-javascript'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'othree/html5.vim'
 Plug 'posva/vim-vue'
+Plug 'evanleck/vim-svelte'
+
+Plug 'digitaltoad/vim-pug'
+Plug 'kchmck/vim-coffee-script'
 
 " colorscheme
 Plug 'arcticicestudio/nord-vim'
+Plug 'drewtempelmeyer/palenight.vim'
 
 call plug#end()
 
@@ -55,10 +60,12 @@ let g:airline#extensions#tabline#enabled=1
 let &t_SI="\e[6 q"
 let &t_EI="\e[2 q"
 
-colorscheme nord
+colorscheme palenight
 
 syntax on
 syntax enable
+
+filetype plugin indent on
 
 set background=dark
 
