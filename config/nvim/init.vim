@@ -42,6 +42,8 @@ Plug 'kchmck/vim-coffee-script'
 " colorscheme
 Plug 'arcticicestudio/nord-vim'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'morhetz/gruvbox'
+Plug 'mkarmona/materialbox'
 
 call plug#end()
 
@@ -60,7 +62,7 @@ let g:airline#extensions#tabline#enabled=1
 let &t_SI="\e[6 q"
 let &t_EI="\e[2 q"
 
-colorscheme palenight
+colorscheme gruvbox
 
 syntax on
 syntax enable
