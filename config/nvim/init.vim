@@ -72,6 +72,7 @@ filetype plugin indent on
 set background=dark
 
 set number
+set relativenumber
 
 set hlsearch
 set incsearch
