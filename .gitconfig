@@ -1,0 +1,7 @@
+[user]
+	email = gavril.rebrov@gmail.com
+	name = gavrilrebrov
+[crefential]
+	helper = cache
+[credential]
+	helper = cache

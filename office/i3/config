@@ -1,0 +1,136 @@
+# General
+set $mod Mod4
+font pango:RobotoMono Nerd Font 8
+gaps inner 20
+gaps outer 20
+smart_gaps on
+smart_borders on
+new_window pixel 1
+
+floating_modifier $mod
+
+# Keybindings
+## Quick Launch
+bindsym $mod+Return exec --no-startup-id "termite"
+bindsym $mod+Shift+t exec --no-startup-id "termite -e htop -t htop"
+bindsym $mod+Shift+x exec --no-startup-id "betterlockscreen --lock blur dim"
+bindsym $mod+d exec --no-startup-id "dmenu_run"
+bindsym $mod+b exec --no-startup-id "chromium"
+bindsym $mod+Shift+b exec --no-startup-id "chromium -incognito"
+
+## Window Focus (vim)
+bindsym $mod+Tab focus right
+bindsym $mod+Shift+Tab focus left
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+## Window Move
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+## Window Resize
+bindsym $mod+Mod1+h resize shrink width 10 px or 10ppt
+bindsym $mod+Mod1+j resize shrink height 10 px or 10ppt
+bindsym $mod+Mod1+k resize grow height 10 px or 10ppt
+bindsym $mod+Mod1+l resize grow width 10 px or 10ppt
+
+## Tiling
+bindsym $mod+y split h
+bindsym $mod+u split v
+bindsym $mod+g split toggle
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+# bindsym $mod+a focus parent
+# bindsym $mod+d focus child
+bindsym $mod+Shift+q kill
+bindsym $mod+minus move scratchpad
+bindsym $mod+equal scratchpad show
+bindsym $mod+slash bar mode invisible
+bindsym $mod+Shift+slash bar mode dock
+
+## Misc
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Workspace
+## Terminal
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+## Workspace keybinding
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+## Move to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# Color
+set $cbg "#f26262"
+set $ccolor "#efebe0"
+set $cunfo "#cb8b8b"
+set $cindi "#145ba7"
+set $cindiu "#8a9db1"
+
+## <colorclass>					<border>	<background>	<text>	<indicator> <child_border>
+client.focused					$cbg			$cbg					$ccolor $cindi			$cbg
+client.focused_inactive $cbg			$cunfo				$ccolor	$cindiu			$cunfo
+client.unfocused				$cbg			$cunfo				$ccolor	$cindiu			$cunfo
+client.urgent						$cbg			$cunfo				$ccolor	$cindi			$cunfo
+
+# Bar
+bar {
+	status_command i3blocks
+	position top
+	mode dock
+	font pango:RobotoMono Nerd Font 8
+	workspace_buttons yes
+	strip_workspace_numbers no
+	separator_symbol "|"
+
+	colors {
+		background #000000
+		statusline #ffffff
+
+		focused_workspace #346471 #346471 #ffffff
+		inactive_workspace #1d4150 #1d4150 #191919
+	}
+}
+
+# Startup
+exec_always --no-startup-id "compton"
+exec_always --no-startup-id "xmodmap ~/.Xmodmap"
+exec_always --no-startup-id "nitrogen --restore &"

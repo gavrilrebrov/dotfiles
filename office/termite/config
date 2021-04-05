@@ -1,0 +1,37 @@
+[options]
+font = RobotoMono Nerd Font 10
+scrollback_lines = 100000
+
+[colors]
+foreground = #ebdbb2
+background = rgba(0,0,0,0.8)
+
+highlight = #fbf1c7
+
+# DFT
+color0 = #d8a396
+color8 = #666666
+
+color1 = #494a3e
+color9 = #494a3e
+
+color2 = #9c5033
+color10 = #9c5033
+
+color3 = #b04f41
+color11 = #b04f41
+
+color4 = #a95e4f
+color12 = #a95e4f
+
+color5 = #6d826f
+color13 = #6d826f
+
+color6 = #ca8d67
+color14 = #ca8d67
+
+color7 = #d8a396
+color15 = #d8a396
+
+[hints]
+active_background = #3f3f3f
