@@ -179,3 +179,4 @@ bar {
 exec compton
 exec nitrogen --restore &
 exec xmodmap ~/.Xmodmap
+exec setxkbmap -layout us,ru -option grp:alt_shift_toggle

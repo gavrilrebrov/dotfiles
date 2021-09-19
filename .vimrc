@@ -8,6 +8,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'myusuf3/numbers.vim'
+Plug 'editorconfig/editorconfig-vim'
 
 " git
 Plug 'tpope/vim-fugitive'
@@ -23,6 +24,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'Badacadabra/vim-archery'
 Plug 'dikiaap/minimalist'
 Plug 'crusoexia/vim-monokai'
+Plug 'cocopon/iceberg.vim'
 
 " syntax
 Plug 'mxw/vim-jsx'
@@ -52,7 +54,7 @@ let &t_EI = "\e[2 q"
 syntax on
 syntax enable
 
-colorscheme monokai
+colorscheme iceberg
 
 set t_Co=256
 
